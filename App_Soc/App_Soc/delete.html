@@ -1,0 +1,15 @@
+{% extends "App_Soc/base.html" %}
+
+{% block title %}
+Delete details
+{% endblock %}
+
+{% block content %}
+<h1>Delete Details</h1>
+   <p>Are you sure you want to delete "{{item}}" ?</p>
+<form actin="{% url 'delete-user' item.ic_no %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'student-report' %}">Cancel</a>
+    <input type="submit" name="Confirm">
+</form>
+{% endblock %}

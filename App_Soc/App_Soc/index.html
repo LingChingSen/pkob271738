@@ -1,0 +1,21 @@
+{% extends "App_Soc/base.html" %}
+
+{% block title %}
+    All Victim
+{% endblock %}
+
+{% block content %}
+    <h1>List of Victim</h1>
+    <table>
+        <tr>
+            <th>IC No</th>
+            <th>Name</th>
+        </tr>
+        {% for student in student_list %}
+            <tr>
+                 <td><a href="{% url 'victim-details' student.ic_no %}">{{ student.ic_no }}</a></td>
+                <td>{{ student.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

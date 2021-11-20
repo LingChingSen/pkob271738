@@ -1,0 +1,21 @@
+{% extends "App_Soc/base.html" %}
+
+{% block title %}
+Add User
+{% endblock %}
+
+{% block content %}
+<h1>Add User</h1>
+
+
+ {% if submitted %}
+     Your User Was Submitted Successfully!
+ {% else %}
+
+   <form action="" method=POST>
+     {% csrf_token %}
+     {{ form.as_p}}
+    <input type="submit" value="Submit" class="btn btn-secondary">
+   </form>
+{% endif %}
+{% endblock %}
